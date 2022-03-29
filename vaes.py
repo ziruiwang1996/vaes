@@ -12,21 +12,21 @@ class VAEs(nn.Module):
         self.dropout = nn.Dropout(dropout)
         self.encoder = nn.Sequential(
             nn.Conv1d(20, 40, kernal, stride=1),
-            nn.PReLU(),
+            nn.ReLU(),
             nn.Conv1d(40, 80, kernal, stride=2),
-            nn.PReLU(),
+            nn.ReLU(),
             nn.Conv1d(80, 160, kernal, stride=2),
-            nn.PReLU(),
+            nn.ReLU(),
             nn.Conv1d(160, 160, kernal, stride=1, bias=True),
             nn.Flatten(),
         )
         self.decoder = nn.Sequential(
             nn.ConvTranspose1d(160, 160, kernal, stride=1, bias=True),
-            nn.PReLU(),
+            nn.ReLU(),
             nn.ConvTranspose1d(160, 80, kernal, stride=2),
-            nn.PReLU(),
+            nn.ReLU(),
             nn.ConvTranspose1d(80, 40, kernal, stride=2),
-            nn.PReLU(),
+            nn.ReLU(),
             nn.ConvTranspose1d(40, 20, kernal, stride=1),
             nn.Sigmoid(),
         )
