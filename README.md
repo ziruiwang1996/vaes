@@ -3,4 +3,4 @@ This repository contains code for implementation of VAE for protein sequence gen
 
 Overview: 
 
-training sequences ---**encoder**---> latent distributions --> sample latent z from distributions ---**decoder**---> new sequences
+training sequences ---**encoder**---> latent distributions --> sample z from latent distributions ---**decoder**---> new sequences
